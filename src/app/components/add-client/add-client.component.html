@@ -40,8 +40,6 @@
           Must be at least 2 characters
         </div>
       </div>
-    </form>
-    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
       <div class="form-group">
         <label for="lastName">Last Name</label>
         <input
@@ -69,8 +67,6 @@
           Must be at least 2 characters
         </div>
       </div>
-    </form>
-    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -92,8 +88,6 @@
           Email is not valid
         </div>
       </div>
-    </form>
-    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
       <div class="form-group">
         <label for="phone">Phone</label>
         <input
@@ -115,8 +109,6 @@
           Must be at least 10 characters
         </div>
       </div>
-    </form>
-    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
       <div class="form-group">
         <label for="balance">Balance</label>
         <input
@@ -128,6 +120,7 @@
           [disabled]="disableBalanceOnAdd"
         />
       </div>
+      <input type="submit" value="Submit" class="btn btn-primary btn-block" />
     </form>
   </div>
 </div>

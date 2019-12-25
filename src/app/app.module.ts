@@ -7,6 +7,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 import { ClientService } from './services/client.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -44,7 +46,8 @@ import { ClientsComponent } from './components/clients/clients.component';
     AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    FormsModule
+    FormsModule,
+    FlashMessagesModule.forRoot()
   ],
   providers: [ClientService],
   bootstrap: [AppComponent]
