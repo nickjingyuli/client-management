@@ -12,7 +12,6 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 export class ClientDetailsComponent implements OnInit {
   id: string;
   client: Client;
-  hasBalance: boolean = false;
   showBalanceUpdateInput: boolean = false;
 
   constructor(
@@ -27,13 +26,16 @@ export class ClientDetailsComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     // Get client
     this.clientService.getClient(this.id).subscribe(client => {
-      if (client != null) {
-        debugger;
-        if (client.balance > 0) {
-          this.hasBalance = true;
-        }
-      }
       this.client = client;
+    });
+  }
+
+  updateBalance() {
+    this.showBalanceUpdateInput = false;
+    this.clientService.updateClient(this.client);
+    this._flashMessagesService.show('Balance updated', {
+      cssClass: 'alert-success',
+      timeout: 4000
     });
   }
 }
