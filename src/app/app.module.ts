@@ -10,6 +10,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { ClientService } from './services/client.service';
+import { AuthService } from './services/auth.service';
+import { SettingsService } from './services/settings.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,7 +51,7 @@ import { ClientsComponent } from './components/clients/clients.component';
     FormsModule,
     FlashMessagesModule.forRoot()
   ],
-  providers: [ClientService],
+  providers: [ClientService, AuthService, SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
